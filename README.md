@@ -1,32 +1,29 @@
-# InterviewPrep
+# InterviewEngine
 
-A lightweight SwiftUI app that serves a rotating set of interview questions
-across ML, statistics, SWE, and quant topics.
+InterviewPrep is a lightweight SwiftUI app that serves a rotating set of interview questions across ML, statistics, SWE, and quant topics.
 
-The app does not generate questions — it selects from a structured JSON
-question bank and tracks progress by category.
+The app does not generate questions. It selects from a structured JSON question bank and tracks progress by category.
 
-## Purpose
+Purpose
 
-Designed as a low-friction, non-intrusive tool to:
+This project was built as a low-friction, non-intrusive way to:
 
-- Stay sharp on technical fundamentals
-- Practice interview-style thinking
-- Track weak areas by category
-- Keep concepts fresh throughout the day
+- Stay sharp on technical fundamentals  
+- Practice interview-style thinking  
+- Identify weaker subject areas  
+- Keep important concepts fresh throughout the day  
 
-It’s intentionally simple and lightweight — something you can toggle open
-briefly between tasks.
+It’s intentionally simple — something you can briefly open between tasks without disrupting workflow.
 
-## Features
+Features
 
-- Randomized question selection from a curated question bank
-- Category-based tracking (ML, statistics, SWE, quant)
-- Daily configurable question counts
-- JSON-driven architecture (easy to extend)
+- Randomized question selection from a curated question bank  
+- Progress tracking by category (ML, statistics, SWE, quant)  
+- Configurable daily question counts  
+- JSON-driven structure that makes the question bank easy to extend  
 
-## Stack
+Stack
 
-- SwiftUI
-- Local JSON data store
-- Simple state management
+- SwiftUI  
+- Local JSON data store  
+- Lightweight state management  
