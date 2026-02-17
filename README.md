@@ -1,4 +1,4 @@
-# InterviewEngine
+# InterviewPrepEngine
 
 InterviewPrep is a lightweight SwiftUI app that serves a rotating set of interview questions across ML, statistics, SWE, and quant topics.
 
