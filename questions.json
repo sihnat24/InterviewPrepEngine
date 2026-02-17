@@ -1,0 +1,347 @@
+[
+    {
+        "id": "intuition_small_hospital",
+        "category": "statistics",
+        "prompt": "A small hospital averages 10 births per day. A large hospital averages 100 births per day. Which hospital will have more days where over 60% of babies are boys?",
+        "answer": "The small hospital.",
+        "hint": "Think about sample size and variability.",
+        "explanation": "Smaller samples fluctuate more. The Law of Large Numbers says that larger samples stay closer to the true mean (about 50% boys). With only 10 births, proportions like 70% or 30% are much more likely than with 100 births. Variance decreases as sample size increases."
+    },
+    {
+        "id": "intuition_extreme_results",
+        "category": "statistics",
+        "prompt": "If you observe an extreme percentage (like 80% success), what should be your first question?",
+        "answer": "What was the sample size?",
+        "hint": "Small samples exaggerate outcomes.",
+        "explanation": "Extreme outcomes are much more common in small samples because variance is higher. Always check sample size before trusting a percentage."
+    },
+    {
+        "id": "intuition_regression_to_mean",
+        "category": "statistics",
+        "prompt": "A fund has an unusually high return this year. What should you statistically expect next year?",
+        "answer": "Performance is likely to regress toward the mean.",
+        "hint": "Extreme outcomes tend not to persist.",
+        "explanation": "Regression to the mean means unusually high or low results are often followed by more typical outcomes due to randomness. It does not imply causation — only statistical tendency."
+    },
+    {
+        "id": "interview_bias_variance_deep",
+        "category": "ml",
+        "prompt": "Explain the bias–variance tradeoff and how it affects model selection.",
+        "answer": "Bias is error from overly simple assumptions; variance is error from sensitivity to training data. Good models balance both to generalize well.",
+        "hint": "Underfitting vs overfitting.",
+        "explanation": "High bias models underfit and miss patterns. High variance models overfit and memorize noise. Model selection involves choosing complexity that minimizes total expected error on unseen data."
+    },
+    {
+        "id": "interview_data_leakage_example",
+        "category": "ml",
+        "prompt": "Give a concrete example of data leakage.",
+        "answer": "Normalizing features using the full dataset before splitting into train and test.",
+        "hint": "Future information sneaks in.",
+        "explanation": "If preprocessing uses the entire dataset, test information influences training. Proper procedure is: split first, then compute statistics (like mean and std) using only training data."
+    },
+    {
+        "id": "interview_alpha_definition",
+        "category": "quant",
+        "prompt": "What is alpha in quantitative finance?",
+        "answer": "Alpha is return above what is explained by market exposure (beta).",
+        "hint": "Skill vs exposure.",
+        "explanation": "Beta represents exposure to systematic market risk (e.g., S&P 500). Alpha is excess return after adjusting for that exposure. True alpha implies predictive skill, not just market movement."
+    },
+    {
+        "id": "interview_big_o_tradeoff",
+        "category": "swe",
+        "prompt": "Why might an O(n log n) algorithm be preferable to an O(n) algorithm in practice?",
+        "answer": "If the O(n) algorithm has worse constants, memory overhead, or is not cache-friendly.",
+        "hint": "Asymptotics are not everything.",
+        "explanation": "Big-O ignores constant factors and hardware realities. In real systems, memory access patterns, cache locality, and implementation overhead can dominate theoretical complexity."
+    },
+    {
+        "id": "interview_sharpe_interpretation",
+        "category": "quant",
+        "prompt": "What does a Sharpe ratio measure and what are its limitations?",
+        "answer": "It measures excess return per unit of volatility, but assumes normally distributed returns.",
+        "hint": "Risk-adjusted return.",
+        "explanation": "Sharpe = (Return − Risk-free rate) / Volatility. It penalizes upside and downside volatility equally and performs poorly when returns are skewed or fat-tailed."
+    },
+    {
+        "id": "ml_interview_precision_recall",
+        "category": "ml",
+        "prompt": "What is precision and recall, and when might you prefer one over the other?",
+        "answer": "Precision is the fraction of predicted positives that are true; recall is the fraction of actual positives that are captured.",
+        "hint": "Think false positives vs false negatives.",
+        "explanation": "Precision = TP / (TP + FP). Recall = TP / (TP + FN). Precision matters when false positives are costly (e.g., spam blocking good emails). Recall matters when missing positives is costly (e.g., disease detection). The F1 score balances them."
+    },
+    {
+        "id": "ml_interview_hyperparameter_vs_parameter",
+        "category": "ml",
+        "prompt": "What’s the difference between a model parameter and a hyperparameter?",
+        "answer": "Parameters are learned during training; hyperparameters are set before training.",
+        "hint": "Think weights vs learning rate.",
+        "explanation": "Model parameters (like neural network weights) are fit from data. Hyperparameters (like learning rate, regularization strength, tree depth) control training behavior and model capacity and are tuned via a validation set."
+    },
+    {
+        "id": "ml_interview_central_limit_theorem",
+        "category": "statistics",
+        "prompt": "What is the Central Limit Theorem and why is it useful?",
+        "answer": "The sampling distribution of the mean approaches normal as sample size increases.",
+        "hint": "Mean of means.",
+        "explanation": "Even if the underlying distribution isn’t normal, the mean of many independent samples tends to look Gaussian. This allows us to use normal-based confidence intervals or hypothesis tests on sample means."
+    },
+    {
+        "id": "statistics_interview_p_value",
+        "category": "statistics",
+        "prompt": "What does a p-value represent?",
+        "answer": "Probability of observing data at least as extreme as seen, assuming the null hypothesis is true.",
+        "hint": "Assume null.",
+        "explanation": "A p-value is not the probability the null hypothesis is true; it’s the probability of observing your result under the null."
+    },
+    {
+        "id": "statistics_interview_type1_type2",
+        "category": "statistics",
+        "prompt": "Explain Type I and Type II errors.",
+        "answer": "Type I error is a false positive; Type II error is a false negative.",
+        "hint": "α vs β errors.",
+        "explanation": "Rejecting a true null is Type I. Failing to reject a false null is Type II."
+    },
+    {
+        "id": "statistics_intuition_regression_to_mean",
+        "category": "statistics",
+        "prompt": "Why do extreme results often regress to the mean on repeat measurement?",
+        "answer": "Because random variability tends to cancel out on average.",
+        "hint": "Extreme luck is partly random.",
+        "explanation": "An extreme result has two components: signal + noise. Next time, the noise component is unlikely to repeat in the same direction."
+    },
+    {
+        "id": "statistics_intuition_law_large_numbers",
+        "category": "statistics",
+        "prompt": "What does the Law of Large Numbers imply about sample averages?",
+        "answer": "Larger samples produce averages closer to the true population mean.",
+        "hint": "More data → more stable.",
+        "explanation": "As sample size grows, sampling variability shrinks."
+    },
+    {
+        "id": "ds_interview_linked_list_cycle",
+        "category": "swe",
+        "prompt": "How can you detect a cycle in a linked list in O(n) time and O(1) space?",
+        "answer": "Using Floyd’s tortoise and hare (slow + fast pointers).",
+        "hint": "Two pointers.",
+        "explanation": "Advance one pointer 1 step and another 2 steps; if they ever meet, there’s a cycle."
+    },
+    {
+        "id": "ds_interview_binary_search_vs_linear",
+        "category": "swe",
+        "prompt": "When is binary search appropriate and why is it faster than linear search?",
+        "answer": "When data is sorted; it halves the search space each step.",
+        "hint": "Divide and conquer.",
+        "explanation": "Binary search runs in O(log n) time."
+    },
+    {
+        "id": "ds_interview_hashmap_collision",
+        "category": "swe",
+        "prompt": "What is a hash collision and how is it usually handled?",
+        "answer": "Two keys map to the same bucket; handle with chaining or open addressing.",
+        "hint": "Buckets bind.",
+        "explanation": "Collisions occur when different keys hash to the same index."
+    },
+    {
+        "id": "intuition_base_rate_fallacy",
+        "category": "statistics",
+        "prompt": "A disease affects 1% of the population. A test is 95% accurate. If you test positive, is it likely you have the disease?",
+        "answer": "Not necessarily — the base rate matters.",
+        "hint": "Think prior probability.",
+        "explanation": "Even with 95% accuracy, false positives can outnumber true positives when the disease is rare."
+    },
+    {
+        "id": "intuition_correlation_vs_causation",
+        "category": "statistics",
+        "prompt": "Two variables are highly correlated. Does that mean one causes the other?",
+        "answer": "No.",
+        "hint": "Third variable?",
+        "explanation": "Correlation measures association, not causation."
+    },
+    {
+        "id": "intuition_survivorship_bias",
+        "category": "statistics",
+        "prompt": "Why is looking only at successful startups misleading?",
+        "answer": "Because failed startups are excluded.",
+        "hint": "Missing data.",
+        "explanation": "Survivorship bias ignores entities that failed."
+    },
+    {
+        "id": "intuition_expected_value_gamble",
+        "category": "statistics",
+        "prompt": "Would you take a bet where you win $100 with 40% probability and lose $50 with 60% probability?",
+        "answer": "Yes, because expected value is positive.",
+        "hint": "Compute EV.",
+        "explanation": "Expected value = 0.4×100 − 0.6×50 = +10."
+    },
+    {
+        "id": "interview_overfitting_solutions",
+        "category": "ml",
+        "prompt": "How can you reduce overfitting in a machine learning model?",
+        "answer": "Regularization, more data, cross-validation, simpler models, dropout.",
+        "hint": "Reduce variance.",
+        "explanation": "Overfitting occurs when a model memorizes noise."
+    },
+    {
+        "id": "interview_gradient_descent_step_size",
+        "category": "ml",
+        "prompt": "What happens if the learning rate in gradient descent is too high?",
+        "answer": "The model may diverge or oscillate.",
+        "hint": "Overshooting.",
+        "explanation": "Too large a step size overshoots minima."
+    },
+    {
+        "id": "interview_random_forest_vs_boosting",
+        "category": "ml",
+        "prompt": "What is the difference between Random Forest and Gradient Boosting?",
+        "answer": "Random Forest builds trees independently; boosting builds sequentially to correct errors.",
+        "hint": "Parallel vs sequential.",
+        "explanation": "Random Forest reduces variance. Boosting reduces bias."
+    },
+    {
+        "id": "interview_class_imbalance_solution",
+        "category": "ml",
+        "prompt": "How would you handle class imbalance?",
+        "answer": "Resampling, class weighting, different metrics.",
+        "hint": "Accuracy may mislead.",
+        "explanation": "Imbalanced datasets bias models toward the majority class."
+    },
+    {
+        "id": "interview_time_series_leakage",
+        "category": "ml",
+        "prompt": "Why is random train-test splitting dangerous in time series?",
+        "answer": "It leaks future information into training.",
+        "hint": "Temporal order matters.",
+        "explanation": "Time series must respect chronology."
+    },
+    {
+        "id": "interview_hashmap_complexity",
+        "category": "swe",
+        "prompt": "What is the average and worst-case time complexity of a hash map lookup?",
+        "answer": "Average O(1), worst-case O(n).",
+        "hint": "Collisions matter.",
+        "explanation": "Collisions can degrade performance."
+    },
+    {
+        "id": "interview_stack_vs_queue",
+        "category": "swe",
+        "prompt": "What is the difference between a stack and a queue?",
+        "answer": "Stack is LIFO; queue is FIFO.",
+        "hint": "Last in vs first in.",
+        "explanation": "Stacks are LIFO; queues are FIFO."
+    },
+    {
+        "id": "interview_big_o_space_tradeoff",
+        "category": "swe",
+        "prompt": "Why might you trade space complexity for time complexity?",
+        "answer": "To achieve faster computation using extra memory.",
+        "hint": "Caching.",
+        "explanation": "Memoization reduces repeated computation."
+    },
+    {
+        "id": "quant_interview_signal_decay",
+        "category": "quant",
+        "prompt": "What is signal decay in quantitative trading?",
+        "answer": "When predictive power decreases over time.",
+        "hint": "Markets adapt.",
+        "explanation": "Signals weaken as markets adjust."
+},
+    {
+        "id": "quant_interview_backtest_biases",
+        "category": "quant",
+        "prompt": "Name two common backtesting biases.",
+        "answer": "Lookahead bias and survivorship bias.",
+        "hint": "Future data and missing failures.",
+        "explanation": "Lookahead bias uses information that would not have been available at the time of the trade. Survivorship bias ignores assets that were delisted or failed, inflating historical performance."
+    },
+
+    {
+        "id": "statistics_bayes_interpretation",
+        "category": "statistics",
+        "prompt": "What does Bayes' theorem fundamentally allow you to do?",
+        "answer": "Update beliefs in light of new evidence.",
+        "hint": "Prior → Posterior.",
+        "explanation": "Bayes' theorem combines prior belief with likelihood of observed data to produce a posterior belief. It formalizes rational belief updating."
+    },
+    {
+        "id": "statistics_variance_vs_std",
+        "category": "statistics",
+        "prompt": "What is the difference between variance and standard deviation?",
+        "answer": "Standard deviation is the square root of variance.",
+        "hint": "Units matter.",
+        "explanation": "Variance measures squared deviations from the mean. Standard deviation is in the same units as the data, making it easier to interpret."
+    },
+    {
+        "id": "ml_regularization_l1_l2",
+        "category": "ml",
+        "prompt": "What is the difference between L1 and L2 regularization?",
+        "answer": "L1 promotes sparsity; L2 shrinks weights smoothly.",
+        "hint": "Feature selection vs shrinkage.",
+        "explanation": "L1 adds absolute value penalty and can drive weights to zero (feature selection). L2 adds squared penalty and reduces magnitude but rarely zeroes weights."
+    },
+    {
+        "id": "ml_cross_validation_reason",
+        "category": "ml",
+        "prompt": "Why is cross-validation better than a single train-test split?",
+        "answer": "It reduces variance in performance estimates.",
+        "hint": "Multiple folds.",
+        "explanation": "Cross-validation averages results across multiple splits, giving a more stable estimate of generalization performance."
+    },
+    {
+        "id": "ml_gradient_descent_local_minima",
+        "category": "ml",
+        "prompt": "Can gradient descent get stuck in local minima?",
+        "answer": "Yes, especially in non-convex problems.",
+        "hint": "Neural networks.",
+        "explanation": "In convex problems, any local minimum is global. In deep learning, the loss landscape is non-convex, so gradient descent may settle in local minima or saddle points."
+    },
+    {
+        "id": "swe_binary_tree_traversal",
+        "category": "swe",
+        "prompt": "What are the three main types of depth-first traversal?",
+        "answer": "Preorder, inorder, and postorder.",
+        "hint": "Root position changes.",
+        "explanation": "Preorder: root first. Inorder: root in middle. Postorder: root last. Used in expression trees, BST operations, and recursion practice."
+    },
+    {
+        "id": "swe_big_o_average_vs_worst",
+        "category": "swe",
+        "prompt": "Why do interviews often ask for worst-case complexity?",
+        "answer": "Because guarantees matter.",
+        "hint": "Edge cases.",
+        "explanation": "Worst-case complexity ensures performance guarantees even in adversarial or extreme inputs."
+    },
+    {
+        "id": "swe_dynamic_programming_definition",
+        "category": "swe",
+        "prompt": "What is dynamic programming?",
+        "answer": "Solving problems by breaking them into overlapping subproblems and storing results.",
+        "hint": "Memoization.",
+        "explanation": "Dynamic programming avoids redundant computation by caching intermediate results. It requires optimal substructure and overlapping subproblems."
+    },
+    {
+        "id": "quant_expected_shortfall",
+        "category": "quant",
+        "prompt": "What is Expected Shortfall (CVaR)?",
+        "answer": "The average loss beyond a Value-at-Risk threshold.",
+        "hint": "Tail risk.",
+        "explanation": "While VaR gives a cutoff loss at a confidence level, Expected Shortfall measures the average loss in the worst-case tail beyond that cutoff."
+    },
+    {
+        "id": "quant_sharpe_vs_sortino",
+        "category": "quant",
+        "prompt": "What is the difference between Sharpe and Sortino ratios?",
+        "answer": "Sortino penalizes only downside volatility.",
+        "hint": "Good vs bad volatility.",
+        "explanation": "Sharpe divides excess return by total volatility. Sortino divides by downside deviation only, ignoring upside fluctuations."
+    },
+    {
+        "id": "quant_signal_vs_noise",
+        "category": "quant",
+        "prompt": "How do you determine whether a trading signal is real or noise?",
+        "answer": "Out-of-sample testing and robustness checks.",
+        "hint": "Not just in-sample fit.",
+        "explanation": "A real signal should persist across time periods, markets, and small perturbations. Pure noise disappears out of sample."
+    }
+]
