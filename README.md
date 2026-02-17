@@ -25,4 +25,15 @@ Features
 Stack
 
 - SwiftUI  
-- Local JSON data store  
+- Local JSON data store
+
+How to Run
+
+1. Open Xcode
+2. Create a new iOS App project (SwiftUI template)
+3. Replace the generated Swift files with the files in this repository
+4. Add `questions.json` to the project bundle
+5. Run on simulator or device
+
+
+
