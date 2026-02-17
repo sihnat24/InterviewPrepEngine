@@ -26,4 +26,3 @@ Stack
 
 - SwiftUI  
 - Local JSON data store  
-- Lightweight state management  
