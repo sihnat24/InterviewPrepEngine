@@ -43,34 +43,36 @@ struct QuizView: View {
         .onAppear {
             if questions.isEmpty {
                 questions = DailyQuizEngine.todaysQuestions()
-                AppDelegate.shared.resizePopover(height: 220)
             }
         }
     }
 
     private var quizBody: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 14) {
 
-            if let q = currentQuestion {
+                if let q = currentQuestion {
 
-                Text(q.prompt)
-                    .font(.system(size: 13))
+                    // PROMPT
+                    Text(q.prompt)
+                        .font(.system(size: 13))
+                        .frame(maxWidth: .infinity, alignment: .leading)
 
-                if showHint, let hint = q.hint {
-                    Text("💡 \(hint)")
-                        .font(.footnote)
-                        .foregroundColor(.secondary)
-                }
+                    // HINT
+                    if showHint, let hint = q.hint {
+                        Text("💡 \(hint)")
+                            .font(.footnote)
+                            .foregroundColor(.secondary)
+                    }
 
-                if showAnswer {
+                    if showAnswer {
 
-                    Divider()
+                        Divider()
 
-                    Text("Answer")
-                        .font(.subheadline)
-                        .bold()
+                        Text("Answer")
+                            .font(.subheadline)
+                            .bold()
 
-                    ScrollView {
                         VStack(alignment: .leading, spacing: 8) {
                             Text(q.answer)
                                 .foregroundColor(.green)
@@ -79,52 +81,49 @@ struct QuizView: View {
                                 .font(.footnote)
                                 .foregroundColor(.secondary)
                         }
-                    }
-                    .frame(maxHeight: 160)
 
-                    Button("NEXT") {
-                        advance(question: q)
+                        Button("NEXT") {
+                            advance(question: q)
+                        }
+
+                    } else {
+
+                        Spacer(minLength: 8)
+
+                        HStack {
+                            Button {
+                                pendingConfidence = false
+                                showAnswer = true
+                            } label: {
+                                Image(systemName: "xmark.circle.fill")
+                                    .foregroundColor(.red)
+                                    .font(.title)
+                            }
+
+                            Spacer()
+
+                            Button {
+                                pendingConfidence = true
+                                showAnswer = true
+                            } label: {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundColor(.green)
+                                    .font(.title)
+                            }
+                        }
+
+                        if q.hint != nil {
+                            Button("Hint") {
+                                showHint = true
+                            }
+                            .font(.footnote)
+                        }
                     }
 
                 } else {
-
-                    Spacer(minLength: 8)
-
-                    HStack {
-                        Button {
-                            pendingConfidence = false
-                            showAnswer = true
-                            AppDelegate.shared.resizePopover(height: 360)
-                        } label: {
-                            Image(systemName: "xmark.circle.fill")
-                                .foregroundColor(.red)
-                                .font(.title)
-                        }
-
-                        Spacer()
-
-                        Button {
-                            pendingConfidence = true
-                            showAnswer = true
-                            AppDelegate.shared.resizePopover(height: 360)
-                        } label: {
-                            Image(systemName: "checkmark.circle.fill")
-                                .foregroundColor(.green)
-                                .font(.title)
-                        }
-                    }
-
-                    if q.hint != nil {
-                        Button("Hint") {
-                            showHint = true
-                        }
-                        .font(.footnote)
-                    }
+                    Text("You're done for today 🎉")
+                        .foregroundColor(.secondary)
                 }
-
-            } else {
-                Text("You're done for today 🎉")
-                    .foregroundColor(.secondary)
             }
         }
     }
@@ -142,7 +141,5 @@ struct QuizView: View {
         showAnswer = false
         pendingConfidence = nil
         currentIndex += 1
-
-        AppDelegate.shared.resizePopover(height: 220)
     }
 }
