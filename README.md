@@ -1,39 +1,26 @@
+Here's a cleaner version:
+
+---
+
 # InterviewPrepEngine
 
-InterviewPrep is a lightweight SwiftUI app that serves a rotating set of interview questions across ML, statistics, SWE, and quant topics.
+A lightweight iOS flashcard app for staying sharp on technical interview topics across ML, statistics, SWE, and quant. The intended use case is low-friction, high-frequency.
 
-The app does not generate questions. It selects from a structured JSON question bank and tracks progress by category.
+### How to Use It
 
-Purpose
+Each session surfaces a question from one of the four categories. Think through your answer, then reveal it. The app tracks your responses per category over time, which tends to be more honest than self-assessment about where your actual gaps are.
 
-This project was built as a low-friction, non-intrusive way to:
+The daily question count is configurable and intentionally low by default. Consistency matters more than volume here.
 
-- Stay sharp on technical fundamentals  
-- Practice interview-style thinking  
-- Identify weaker subject areas  
-- Keep important concepts fresh throughout the day  
+The question bank is driven by a local `questions.json` file. To add questions, edit that file directly — no code changes needed. Each entry takes a category, a prompt, and an answer.
 
-It’s intentionally simple — something you can briefly open between tasks without disrupting workflow.
+### Setup
 
-Features
+1. Open Xcode and create a new iOS App project using the SwiftUI template
+2. Replace the generated Swift files with the files from this repository
+3. Add `questions.json` to the project bundle (ensure "Add to target" is checked)
+4. Run on simulator or device
 
-- Randomized question selection from a curated question bank  
-- Progress tracking by category (ML, statistics, SWE, quant)  
-- Configurable daily question counts  
-- JSON-driven structure that makes the question bank easy to extend  
+### Extending the Question Bank
 
-Stack
-
-- SwiftUI  
-- Local JSON data store
-
-How to Run
-
-1. Open Xcode
-2. Create a new iOS App project (SwiftUI template)
-3. Replace the generated Swift files with the files in this repository
-4. Add `questions.json` to the project bundle
-5. Run on simulator or device
-
-
-
+`questions.json` is the only file you need to touch. Add a new object with `category`, `question`, and `answer` fields and the app picks it up on next launch. Good sources: past coursework, problem sets, anything that came up in an actual interview that you had to look up afterward.
